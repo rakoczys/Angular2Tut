@@ -1,15 +1,13 @@
-(function(app){
-  var Component = ng.core.Component;
-  var QuoteService = app.QuoteService;
+import {Component, Inject} from '@angular/core';
+import {QuoteService} from './quote.service';
 
-app.SecondComponent = Component({
-    selector:'second',
-    template:'<p><em>{{quote.line}}</em>{{quote.author}}</p>'
+@Component({
+    selector : 'second',
+    template : '<p><em>{{quote.line}}</em>{{quote.author}}</p>'
 })
-.Class({
-    constructor: [QuoteService, function SecondComponent (quoteService){
-       quoteService.generateRandomQuotes(2000, quote => this.quote = quote);
-    }]
-});
 
-})(window.app || (window.app = {}));
+export class SecondComponent {
+    constructor (@Inject (QuoteService) quoteService) {
+        quoteService.generateRandomQuotes(2000, quote => this.quote = quote);
+    }
+}

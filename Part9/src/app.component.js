@@ -1,13 +1,12 @@
-(function(app){
-  var Component = ng.core.Component;
+import {Component} from '@angular/core';
 
-app.AppComponent = Component({
-    selector: 'my-app',
-    template: `<h3>Angular - hellooo...</h3>
-              <second></second>`
+@Component ({
+selector: 'my-app',
+template: `<h3>Angular - hellooo...</h3>
+            <second></second>`
 })
-.Class({
-    constructor : function AppComponent (){}
-});
 
-})(window.app || (window.app = {}));
+export class AppComponent {
+    
+
+}

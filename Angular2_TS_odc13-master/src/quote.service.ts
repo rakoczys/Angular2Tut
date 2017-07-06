@@ -1,19 +1,18 @@
 export class QuoteService {
-  constructor (){
-      this.quotes = quotes2;
-  }
-  
-  getRandomQuote (){
-      var randomIndex = Math.floor(Math.random() * this.quotes.length);
-      return this.quotes[randomIndex];
+
+  quotes = quotes2;
+
+  getRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * this.quotes.length);
+    return this.quotes[randomIndex];
   }
 
-  generateRandomQuotes (delay,callback){
-      callback(this.getRandomQuote());
-      setInterval(() => callback(this.getRandomQuote()),delay);
+  generateRandomQuotes(delay, callback) {
+    callback(this.getRandomQuote());
+    setInterval(() => callback(this.getRandomQuote()), delay);
   }
 }
-  
+
 const quotes2 = [
   {
     "line": "Walking on water and developing software from a specification are easy if both are frozen.",
